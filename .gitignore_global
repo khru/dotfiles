@@ -1,0 +1,12 @@
+# ZSH
+*.zwc
+
+# Mac
+.DS_Store
+
+# Editors
+.vscode
+.idea
+
+# Custom
+*.no-commit.*
