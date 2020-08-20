@@ -3,7 +3,7 @@
 sudo apt-get install -y flameshot
 sudo apt-get install -y krita
 sudo apt-get install -y gimp
-sudo apt-get install -y notepadqq
+snap install --classic notepadqq
 sudo apt-get install -y peek
 snap install emote
 sudo add-apt-repository ppa:obsproject/obs-studio

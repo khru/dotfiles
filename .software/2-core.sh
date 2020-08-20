@@ -17,6 +17,7 @@ sudo apt-get install -y jq
 sudo apt-get install -y rsync grsync
 sudo apt-get install -y python-pip
 sudo apt-get install -y python3-pip
+sudo apt-get install -y default-jre
 sudo apt-get install -y openjdk-11-jdk openjdk-11-jre
 sudo pip3 install pipenv
 sudo apt-get install -y guake

@@ -12,5 +12,7 @@ help:
 
 TIMESTAMP=$(shell date "+%Y%m%d-%H%M%S");
 init:
-	sudo chmod +x ./software
-	.software/init.sh
+	sudo chmod +x ./.software
+	sudo chmod +x ./main.sh
+	./main.sh
+	./.software/init.sh

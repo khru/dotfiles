@@ -18,13 +18,21 @@ sudo chmod +x -R ~/cinnamon-19
 ~/cinnamon-19/icons-sardi-v3.sh
 ~/cinnamon-19/icons-surfn-v4.sh
 
+sudo add-apt-repository ppa:numix/ppa
+sudo apt-get update
+sudo apt-get install -y numix-gtk-theme
+sudo apt-get install -y numix-icon-theme numix-folders
+sudo apt-get install -y numix-icon-theme-circle
+sudo apt-get install -y numix-icon-theme-square
 
 # Nerd fonts
 sudo add-apt-repository ppa:font-manager/staging
 sudo apt-get update
-sudo apt-get install font-manager
+sudo apt-get install -y font-manager
 
-git clone https://github.com/ryanoasis/nerd-fonts.git ~/nerd-fonts
+[ -d "~/nerd-fonts" ] && git clone https://github.com/ryanoasis/nerd-fonts.git ~/nerd-fonts
 sudo chmod +x ~/nerd-fonts/install.sh
+echo "✔️ Instaling Nerd Fonts"
 ~/nerd-fonts/install.sh
-sudo rm -rf nerd-fonts
+echo "🗑️ Erasing Nerd Fonts"
+sudo rm -rf ~/nerd-fonts
