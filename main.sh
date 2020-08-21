@@ -6,3 +6,6 @@ for f in $FILES; do
   # Or more explicitly: if this execution fails, then stop the `for`:
   # if ! bash "$f" -H; then break; fi
 done
+
+rm -rf ~/.zim
+mkdir ~/.zim

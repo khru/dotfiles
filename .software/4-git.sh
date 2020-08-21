@@ -7,7 +7,10 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # powerlevel10
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+mkdir ~/.zim
+curl -fsSL https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh -o ~/.zim/zimfw.zsh
+sudo chmod +x ~/.zim/zimfw.zsh
+zsh ~/.zim/zimfw.zsh install
 
 # ZSH npm plugin
 git clone https://github.com/lukechilds/zsh-better-npm-completion ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion
