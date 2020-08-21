@@ -4,6 +4,11 @@
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
+# powerlevel10
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+
+zimfw install
+
 # ZSH npm plugin
 git clone https://github.com/lukechilds/zsh-better-npm-completion ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion
 
