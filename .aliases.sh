@@ -23,6 +23,8 @@ alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias fhere="find . -name"
 alias tzsh"repeat 10 {time zsh -i -c exit}"
+alias c='pbcopy'
+alias up='upgrade_oh_my_zsh && npm update && zimfw update && zimfw upgrade && sudo apt-get update && sudo apt-get upgrade -y'
 
 # Docker
 alias dps='docker-compose ps'

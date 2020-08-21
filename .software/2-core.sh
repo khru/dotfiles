@@ -28,3 +28,4 @@ sudo apt-get install -y snapd
 sudo apt-get install -y libnss3-tools
 sudo apt-get install -y ffmpeg
 sudo apt-get install -y libevent-dev ncurses-dev build-essential bison pkg-config
+pip install pre-commit
