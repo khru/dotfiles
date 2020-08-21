@@ -32,6 +32,19 @@ https://martijnvos.dev/using-a-bare-git-repository-to-store-linux-dotfiles/
 ```
 
 # Importing dotfiles
+```bash
+git clone https://github.com/khru/dotfiles.git ~/.dotfiles
 ```
-git clone --separate-git-dir=~/.dotfiles https://github.com/khru/dotfiles.git ~
+
+# How to pull
+```bash
+git pull --rebase --autostash
 ```
+
+# Set keybindings
+```
+rofi -show drun -show-icons
+```
+
+# NVM optimitation
+https://tommckenzie.dev/posts/reduce-shell-startup-time-by-lazy-loading-nvm.html

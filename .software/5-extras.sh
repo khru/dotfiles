@@ -13,3 +13,4 @@ sudo snap install postman
 sudo apt-get install -y kazam
 sudo apt-get install -y audacity
 sudo apt-get install -y vlc
+bash -c  "$(curl -sLo- https://git.io/vQgMr)"

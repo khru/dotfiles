@@ -30,7 +30,15 @@
   pls = push --force-with-lease
   lgf = log --stat
 [color]
-  ui = true
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
 [core]
   excludesfile = ~/.gitignore_global
   whitespace = fix,-indent-with-non-tab,trailing-space,-cr-at-eol
@@ -46,3 +54,13 @@
     rebase = true
 [credential]
     helper = cache --timeout=3600
+[color]
+  ui = true
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red
+  new = green
+  whitespace = red reverse
+[diff]
+  algorithm = patience
