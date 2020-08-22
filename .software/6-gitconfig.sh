@@ -8,14 +8,11 @@ read USERNAME
 echo "Introduce your email: "
 read EMAIL
 
-git config --global user.name "${USERNAME}"
-git config --global user.email "${EMAIL}"
+echo "[user]
+  email = ${USERNAME}
+  name = ${USERNAME}
+" > ~/.gitconfig_local
 
-echo "+===================================+"
-echo "|   🐙 Github Account - 💽 Store    |"
-echo "+===================================+"
-git config --global user.name
-git config --global user.email
 echo "======================="
 echo "1 - Crear SSH key"
 echo "2 - Salir"

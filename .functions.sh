@@ -57,3 +57,8 @@ progress-bar() {
 function edit() {
 	nano $(find . -maxdepth 1 -type f | fzf)
 }
+
+
+function lsip() {
+	nmcli -g ip4.address device show $(ifconfig | cut -d ' ' -f1| tr ':' '\n' | awk NF | fzf)
+}

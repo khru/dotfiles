@@ -1,6 +1,7 @@
 [user]
-	email = 
-	name = 
+   # These values are set in ~/.gitconfig_local
+[include]
+  path = ~/.gitconfig_local
 [alias]
   get-branch-name = "!git rev-parse --abbrev-ref HEAD"
   c = "!f(){ git commit -m \"$(git get-branch-name): $1\"; };f"
