@@ -10,8 +10,9 @@ read EMAIL
 
 echo "[user]
   email = ${USERNAME}
-  name = ${USERNAME}
+  name = ${EMAIL}
 " > ~/.gitconfig_local
+cat ~/.gitconfig_local
 
 echo "======================="
 echo "1 - Crear SSH key"
@@ -23,7 +24,7 @@ case $opcion in
 	1)  echo "+====================================+"
 		echo "|🔑 Generating SSH key for that email|"
 		echo "+====================================+"
-		ssh-keygen -t rsa -b 4096 -C "$(git config --global user.email)"
+		ssh-keygen -t rsa -b 4096 -C "${EMAIL}"
 		;;
 	2) exit;;
 	*) echo "Opcion erronea";
