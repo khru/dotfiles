@@ -53,3 +53,7 @@ progress-bar() {
   done
   clean_line
 }
+
+function edit() {
+	nano $(find . -maxdepth 1 -type f | fzf)
+}

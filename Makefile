@@ -8,11 +8,16 @@ help:
 	@echo "usage: make COMMAND"
 	@echo ""
 	@echo "Commands:"
-	@echo "  init                    Run the main script"
+	@echo "  init                    Run ALL"
+	@echo "  dotfiles                Creates a symbolic link with the dotfiles"
+	@echo "  software                Install all the software"
 
-TIMESTAMP=$(shell date "+%Y%m%d-%H%M%S");
-init:
-	sudo chmod +x ./.software
+init: dotfiles software
+
+dotfiles:
 	sudo chmod +x ./main.sh
 	./main.sh
+
+software:
+	sudo chmod +x ./.software
 	./.software/init.sh
