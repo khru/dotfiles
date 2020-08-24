@@ -17,7 +17,19 @@ setopt HIST_IGNORE_ALL_DUPS
 #
 # Input/output
 #
+_display_menu() {
+  rofi -show drun -show-icons
+}
 
+_open_terminal() {
+  tilix
+}
+
+zle         -N    _display_menu
+bindkey  '^b'  _display_menu
+
+zle -N _open_terminal
+bindkey '^[^M' _open_terminal
 # Set editor default keymap to emacs (`-e`) or vi (`-v`)
 bindkey -e
 
