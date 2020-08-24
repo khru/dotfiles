@@ -28,4 +28,6 @@ sudo apt-get install -y snapd
 sudo apt-get install -y libnss3-tools
 sudo apt-get install -y ffmpeg
 sudo apt-get install -y libevent-dev ncurses-dev build-essential bison pkg-config
-pip install pre-commit
+# pip install pre-commit
+sudo apt-get install -y ack
+sudo apt-get install -y silversearcher-a
