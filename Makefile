@@ -17,6 +17,7 @@ init: dotfiles software
 dotfiles:
 	sudo chmod +x ./main.sh
 	./main.sh
+	zsh -i -c gitconfig && exit
 
 software:
 	sudo chmod +x ./.software

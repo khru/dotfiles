@@ -26,7 +26,7 @@ _open_terminal() {
 }
 
 _change_dir() {
-  dirtomove=$(ls -ad */ | fzf)
+  dirtomove=$(ls -la | grep "^d" | awk '{print $9}' | fzf)
   cd "$dirtomove" 
 }
 

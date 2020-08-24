@@ -62,3 +62,51 @@ function edit() {
 function lsip() {
 	nmcli -g ip4.address device show $(ifconfig | cut -d ' ' -f1| tr ':' '\n' | awk NF | fzf)
 }
+
+function zsh-stats() {
+ fc -l 1 | awk '{CMD[$2]++;count++;} END { for (a in CMD)	print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n25;
+}
+
+function gitconfig() {
+	echo "+===================================+"
+	echo "|         🐙 Github Account         |"
+	echo "+===================================+"
+	echo "Introduce your username: "
+	read NAME
+	echo "Introduce your email: "
+	read EMAIL
+	echo "📃 The OUTPUT of the ~/.gitconfig_local file is:"
+	echo "[user]
+	  name = ${NAME}
+	  email = ${EMAIL}
+	  username = ${USERNAME}
+	" >! ~/.gitconfig_local
+	cat ~/.gitconfig_local
+	echo "======================="
+	echo "1 - Editar"
+	echo "2 - Continuar"
+	echo "========================"
+	echo -n "Selecione una opcion:"
+	read  opcion
+	case $opcion in
+		1)  nano ~/.gitconfig_local
+			;;
+		2) ;;
+		*) echo "Opcion erronea";
+	esac
+	echo "======================="
+	echo "1 - Crear SSH key"
+	echo "2 - Salir"
+	echo "========================"
+	echo -n "Selecione una opcion:"
+	read  opcion
+	case $opcion in
+		1)  echo "+====================================+"
+			echo "|🔑 Generating SSH key for that email|"
+			echo "+====================================+"
+			ssh-keygen -t rsa -b 4096 -C "${EMAIL}"
+			;;
+		2) exit;;
+		*) echo "Opcion erronea";
+	esac
+}
