@@ -1,4 +1,4 @@
-alias zsh="source $HOME/.zshrc" 
+#alias zsh="source $HOME/.zshrc" 
 alias lsl="ls -lhFA | less"
 alias fhere="find . -name "
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"

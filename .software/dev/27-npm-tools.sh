@@ -9,3 +9,4 @@ npm install -g vtop
 npm install -g nodemon
 npm install -g localtunnel
 npm install -g npkill
+npm install -g how-2

@@ -25,11 +25,20 @@ _open_terminal() {
   tilix
 }
 
-zle         -N    _display_menu
-bindkey  '^b'  _display_menu
+_change_dir() {
+  dirtomove=$(ls -ad */ | fzf)
+  cd "$dirtomove" 
+}
+
+zle -N  _display_menu
+bindkey '^B' _display_menu
 
 zle -N _open_terminal
 bindkey '^[^M' _open_terminal
+
+zle -N _change_dir
+bindkey '^H' _change_dir
+
 # Set editor default keymap to emacs (`-e`) or vi (`-v`)
 bindkey -e
 

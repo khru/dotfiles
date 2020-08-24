@@ -31,3 +31,5 @@ sudo apt-get install -y libevent-dev ncurses-dev build-essential bison pkg-confi
 # pip install pre-commit
 sudo apt-get install -y ack
 sudo apt-get install -y silversearcher-a
+sudo wget https://github.com/bcicen/ctop/releases/download/v0.7.3/ctop-0.7.3-linux-amd64 -O /usr/local/bin/ctop
+sudo chmod +x /usr/local/bin/ctop
