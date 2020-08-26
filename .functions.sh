@@ -71,17 +71,47 @@ function gitconfig() {
 	echo "+===================================+"
 	echo "|         🐙 Github Account         |"
 	echo "+===================================+"
-	echo "Introduce your username: "
+	echo "Introduce your name: "
 	read NAME
 	echo "Introduce your email: "
 	read EMAIL
-	echo "📃 The OUTPUT of the ~/.gitconfig_local file is:"
-	echo "[user]
-	  name = ${NAME}
-	  email = ${EMAIL}
-	  username = ${USERNAME}
+	echo "Key-Type: 1
+Key-Length: 4096
+Subkey-Type: 1
+Subkey-Length: 4096
+Name-Real: ${NAME}
+Name-Email: ${EMAIL}
+Expire-Date: 0" >! ~/.gen-key-script
+	echo "====================================="
+	echo "♻️ Erasing the old GPG keys if exists"
+	echo "====================================="
+	gpg --delete-key "${NAME}"
+	gpg --delete-secret-key "${NAME}"
+
+	echo "====================================="
+	echo "🔑 Generating GPG keys"
+	echo "====================================="
+	gpg --batch --gen-key ~/.gen-key-script
+
+	ID=$(gpg --list-secret-keys --with-colons \
+    2> /dev/null \
+    | grep '^sec:' | cut --delimiter ':' --fields 5)
+	
+	echo "
+	[user]
+	  	name = ${NAME}
+	  	email = ${EMAIL}
+	  	username = ${USERNAME}
+	  	signingkey=${ID}
+	[commit]
+		gpgsign = true
 	" >! ~/.gitconfig_local
+	echo "📃 The OUTPUT of the ~/.gitconfig_local file is:"
 	cat ~/.gitconfig_local
+	gpg --armor --export ${ID} >! ~/.gpg_github_key
+	echo "📃 The OUTPUT of the ~/.gpg_github_key will be copy to your clipboard and the content would be:"
+	cat ~/.gpg_github_key | xclip -selection clipboard
+	cat ~/.gpg_github_key
 	echo "======================="
 	echo "1 - Editar"
 	echo "2 - Continuar"
@@ -122,4 +152,8 @@ function nvm::update() {
     nvm uninstall "$previous_node_version"
     nvm cache clear
   fi
+}
+
+function docker::stop-all() {
+	docker stop $(docker ps -a -q)
 }
