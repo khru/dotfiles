@@ -58,3 +58,13 @@ alias kctx=kubectx
 
 # Dotfiles
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+# Node
+alias tb="taskbook"
+alias tbl="taskbook --timeline"
+alias tbt="taskbook --task"
+alias tbn="taskbook --note"
+alias tbd="taskbook --delete"
+
+# Youtube-dl
+alias dyp="youtube-dl -cit"
