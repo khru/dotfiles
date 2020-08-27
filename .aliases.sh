@@ -68,3 +68,4 @@ alias tbd="taskbook --delete"
 
 # Youtube-dl
 alias dyp="youtube-dl -cit"
+alias dy="youtube-dl -x"
