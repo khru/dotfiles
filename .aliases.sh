@@ -67,5 +67,5 @@ alias tbn="taskbook --note"
 alias tbd="taskbook --delete"
 
 # Youtube-dl
-alias dyp="youtube-dl -cit"
-alias dy="youtube-dl -x"
+alias dyp="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' -cit"
+alias dy="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' -x"

@@ -11,3 +11,5 @@ npm install -g localtunnel
 npm install -g npkill
 npm install -g how-2
 npm install -g taskbook
+npm install -g stacks-cli
+npm install -g resume-cli

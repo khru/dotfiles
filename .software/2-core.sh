@@ -33,6 +33,8 @@ sudo apt-get install -y ack
 sudo apt-get install -y silversearcher-a
 sudo wget https://github.com/bcicen/ctop/releases/download/v0.7.3/ctop-0.7.3-linux-amd64 -O /usr/local/bin/ctop
 sudo chmod +x /usr/local/bin/ctop
+sudo apt-get install -y ffmpeg
 sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
 sudo chmod a+rx /usr/local/bin/youtube-dl
 youtube-dl -U
+sudo snap install gitkraken --classic
