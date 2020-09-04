@@ -30,6 +30,7 @@
   oursadd = !"git ours && git changed | xargs git add"
   pls = push --force-with-lease
   lgf = log --stat
+  alias = "! git config --list | grep alias"
 [color]
   ui = auto
 [color "branch"]
