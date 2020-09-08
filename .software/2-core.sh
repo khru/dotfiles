@@ -38,3 +38,5 @@ sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtub
 sudo chmod a+rx /usr/local/bin/youtube-dl
 youtube-dl -U
 sudo snap install gitkraken --classic
+sudo apt-get install -y lolcat
+sudo apt-get install -y figlet
