@@ -20,5 +20,5 @@ dotfiles:
 	zsh -i -c gitconfig && exit
 
 software:
-	@sudo @chmod +x ./.software
+	@sudo chmod +x ./.software
 	./.software/init.sh

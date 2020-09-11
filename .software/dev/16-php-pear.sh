@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt-get install php-pear
+sudo apt-get install -y php-pear
