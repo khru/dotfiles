@@ -5,4 +5,5 @@ for f in $FILES; do
 	[ -f ~/$f  ] && rm -f ~/$f
 	ln -s $(pwd)/$f ~/$f || break
 done
+sudo apt-get install -y zsh
 mkdir -p ~/projects
