@@ -17,6 +17,7 @@ init: dotfiles software
 dotfiles:
 	@sudo chmod +x ./main.sh
 	./main.sh
+	sudo apt-get install -y zsh
 	zsh -i -c gitconfig && exit
 
 software:
