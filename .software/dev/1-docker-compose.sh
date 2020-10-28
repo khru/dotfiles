@@ -2,6 +2,7 @@
 source "${BASH_SOURCE%/*}/0-ensure.sh"
 ensure::jq
 ensure::curl
+ensure::docker
 echo "+==================+"
 echo "|    🐳 DOCKER     |"
 echo "+==================+"
