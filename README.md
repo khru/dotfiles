@@ -32,6 +32,18 @@ https://martijnvos.dev/using-a-bare-git-repository-to-store-linux-dotfiles/
 ```
 
 # Importing dotfiles
+
+https://medium.com/@lucaskay/install-node-and-npm-using-nvm-in-mac-or-linux-ubuntu-f0c85153e173
+Install git
+```
+sudo apt-get install -y git
+```
+
+Install make
+```
+sudo apt-get install build-essential
+```
+
 ```bash
 git clone https://github.com/khru/dotfiles.git ~/.dotfiles
 ```

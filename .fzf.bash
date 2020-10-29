@@ -1,13 +1,13 @@
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == */home/evalverde/.fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}${HOME}/.fzf/bin"
+  export PATH="${PATH:+${PATH}:}/home/evalverde/.fzf/bin"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "${HOME}/.fzf/shell/completion.bash" 2> /dev/null
+[[ $- == *i* ]] && source "/home/evalverde/.fzf/shell/completion.bash" 2> /dev/null
 
 # Key bindings
 # ------------
-source "${HOME}/.fzf/shell/key-bindings.bash"
+source "/home/evalverde/.fzf/shell/key-bindings.bash"

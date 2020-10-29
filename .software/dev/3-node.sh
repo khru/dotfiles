@@ -12,3 +12,4 @@ REPO=nodejs/node
 LATEST_NODE_VERSION=$(curl -s https://api.github.com/repos/${REPO}/releases/latest | jq -r '.tag_name')
 nvm install ${LATEST_NODE_VERSION}
 nvm use ${LATEST_NODE_VERSION}
+sudo apt-get install -y npm

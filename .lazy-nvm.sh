@@ -10,6 +10,7 @@ function lazy_nvm {
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
   fi
 }
+# https://medium.com/@lucaskay/install-node-and-npm-using-nvm-in-mac-or-linux-ubuntu-f0c85153e173
 
 # aliases
 function nvm { lazy_nvm; nvm "$@"; }
