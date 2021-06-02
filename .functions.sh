@@ -200,3 +200,31 @@ function morning() {
 	done
 	echo "All done for today! 🔥"
 }
+
+function monday() {
+	#terminals
+	cd ~/projects/nailted-api && tilix -a session-add-right -w ~/projects/nailted-survey-webapp && tilix -a session-add-down -w ~/projects/nailted-webapp && tilix -a app-new-session -w ~/projects/nailted-api && tilix -a session-add-right -w ~/projects/nailted-survey-webapp && tilix -a session-add-down -w ~/projects/nailted-webapp && tilix -a app-new-session -w ~/projects/nailted-api;
+
+	#slack
+	slack > /dev/null 2>&1 &
+
+	#tandem
+	tandem > /dev/null 2>&1 &
+
+	#tandem
+	dbeaver > /dev/null 2>&1 &
+
+	# google chrome
+	google-chrome https://mail.google.com/  https://www.notion.so/ https://github.com/nailted > /dev/null 2>&1 &
+
+}
+
+function nailted-api() {
+	npm run dev:start-postgres && npm run dev && npm run dev:stop-postgres
+}
+
+clone_git_repo() {
+  repo_url=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/user/repos?per_page=200" | jq --raw-output ".[].ssh_url" | fzf)
+  git clone "$repo_url"
+  echo "$repo_url"
+}

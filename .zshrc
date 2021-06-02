@@ -13,7 +13,6 @@
 
 # Remove older command from the history if a duplicate is to be added.
 setopt HIST_IGNORE_ALL_DUPS
-
 #
 # Input/output
 #
@@ -386,9 +385,9 @@ source $ZSH/oh-my-zsh.sh
 #zplugin ice depth=1; zplugin light romkatv/powerlevel10k
 #zinit ice depth=1; zinit light romkatv/powerlevel10k
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 [ -f ~/.exports.sh ] && source ~/.exports.sh
 [ -f ~/.functions.sh ] && source ~/.functions.sh
 [ -f ~/.aliases.sh ] && source ~/.aliases.sh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+ZSH_DISABLE_COMPFIX=true

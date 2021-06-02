@@ -44,14 +44,14 @@ function ensure::docker() {
 	echo "Checking for $REQUIRED_PKG: {STATUS} $PKG_OK"
 	if [ "" = "$PKG_OK" ]; then
 	  echo "⛔ No $REQUIRED_PKG. Setting up $REQUIRED_PKG."
-	  docker system prune -a
+	  docker system prune -a || true;
 	  sudo apt-get remove docker docker-engine docker.io containerd runc
 	  sudo apt-get update
 	  sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent  software-properties-common
 	  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 	  sudo add-apt-repository \
          "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-         $(lsb_release -cs) \
+         fossa \
          stable"
       sudo apt-get update
       DOCKER_LATEST_VERSION=$(apt-cache madison docker-ce | awk '{print $3}' | head -n 1)
