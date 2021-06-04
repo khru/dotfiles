@@ -228,3 +228,7 @@ clone_git_repo() {
   git clone "$repo_url"
   echo "$repo_url"
 }
+
+open_project() {
+ ls ~/projects/ | rofi -show -dmenu -i | xargs -I_ echo ~/projects/_ | xargs -L 1 bash -c 'cd "$0"/ && code -n .'
+}
