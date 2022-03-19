@@ -73,8 +73,12 @@ alias dt='youtube-dl --external-downloader aria2c --external-downloader-args "-x
 
 # Systems
 alias getip='dig @resolver4.opendns.com myip.opendns.com +short -4'
-python=python3
+alias python=python3
 
 
 # Codely
 alias gcl="clone_git_repo"
+
+# VPN Wiregard
+alias vpn_up="sudo wg-quick up wg0"
+alias vpn_down="sudo wg-quick down wg0"
