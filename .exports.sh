@@ -13,3 +13,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 export PATH="$HOME/.tfenv/bin:$PATH"
+export PATH=$HOME/.config/rofi/bin:$PATH
+
+mkdir -p ~/.idea/bin
+export PATH="$HOME/.idea/bin:$PATH"
+
+export PROJECTS="$HOME/projects"
