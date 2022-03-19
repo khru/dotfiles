@@ -40,5 +40,7 @@ youtube-dl -U
 sudo snap install gitkraken --classic
 sudo apt-get install -y lolcat
 sudo apt-get install -y figlet
-sudo apt install -y shutter
-sudo apt install -y gnome-web-photo
+sudo apt-get install -y shutter
+sudo apt-get install -y gnome-web-photo
+sudo apt-get install -y exa
+sudo apt-get install -y bat
