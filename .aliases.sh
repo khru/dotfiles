@@ -82,3 +82,9 @@ alias gcl="clone_git_repo"
 # VPN Wiregard
 alias vpn_up="sudo wg-quick up wg0"
 alias vpn_down="sudo wg-quick down wg0"
+
+
+# New commands
+alias ls="exa --icons"
+alias bat="batcat"
+alias cat="bat --paging=never"

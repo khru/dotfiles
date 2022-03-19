@@ -12,7 +12,4 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-#mkdir -p ~/.idea/bin
-#export PATH="$HOME/.idea/bin:$PATH"
-
 export PATH="$HOME/.tfenv/bin:$PATH"
