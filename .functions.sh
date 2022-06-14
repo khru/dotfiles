@@ -196,11 +196,35 @@ core_up() {
 	sdk install java 11.0.14-ms
 	sdk use java 11.0.14-ms
 	docker-compose up -d
-	.gradlew bootRun
+	./gradlew bootRun
 }
 
 core_down() {
+	cd ${PROJECTS}/scenmate/core
+	docker-compose down
+	cd -
+}
+
+front_up() {
 	cd ${PROJECTS}/scenmate/frontend
-	nvm use
-	npm run dev
+        nvm use
+        npm run dev
+}
+
+clean_apt_update() {
+	sudo rm /var/lib/apt/lists/lock
+	sudo rm /var/cache/apt/archives/lock
+	sudo rm /var/lib/dpkg/lock
+}
+
+lg()
+{
+    export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+
+    lazygit "$@"
+
+    if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+            cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+            rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+    fi
 }

@@ -16,7 +16,8 @@ alias ...="cd ../.."
 alias du="du -ach | sort -h"
 alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
-alias fhere="find . -name" 
+alias fhere="find . -name"
+alias fd="fdfind"
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias purge-node-modules="find . -name node_modules -type d -prune -exec rm -rf {} +"
 alias du="du -ach | sort -h"
@@ -26,6 +27,7 @@ alias fhere="find . -name"
 alias tzsh="repeat 10 {time zsh -i -c exit}"
 alias c="pbcopy"
 alias up="upgrade_oh_my_zsh && npm update && zimfw update && zimfw upgrade && sudo apt-get update && sudo apt-get upgrade -y"
+alias lg='lazygit'
 
 # PHP
 alias pf="./vendor/bin/phpunit --filter"
@@ -52,9 +54,9 @@ alias gra="git rebase --abort"
 alias ga="git commit --amend"
 
 #kubernetes
-alias k=kubectl
-alias kns=kubens
-alias kctx=kubectx
+alias k="kubectl"
+alias kns="kubens"
+alias kctx="kubectx"
 
 # Dotfiles
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
@@ -85,6 +87,6 @@ alias vpn_down="sudo wg-quick down wg0"
 
 
 # New commands
-alias ls="exa --icons"
+alias ls="exa"
 alias bat="batcat"
-alias cat="bat --paging=never"
+#alias cat="bat --paging=never"
