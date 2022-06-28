@@ -44,3 +44,4 @@ sudo apt-get install -y shutter
 sudo apt-get install -y gnome-web-photo
 sudo apt-get install -y exa
 sudo apt-get install -y bat
+sudo apt-get install -y zeal
