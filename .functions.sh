@@ -181,7 +181,7 @@ function nailted-api() {
 }
 
 clone_git_repo() {
-  repo_url=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/user/repos?per_page=200" | jq --raw-output ".[].ssh_url" | fzf)
+  repo_url=$(curl -s -H "Authorization: token $GITHUB_TOKEN_PULL" "https://api.github.com/user/repos?per_page=200" | jq --raw-output ".[].ssh_url" | fzf)
   git clone "$repo_url"
   echo "$repo_url"
 }
@@ -190,23 +190,38 @@ open_project() {
 	ls ${PROJECTS} | rofi -show -dmenu -i -normal-window | xargs -I_ echo ${PROJECTS}/_ | xargs -L 1 bash -c 'code -n $0'
 }
 
+core_setup() {
+	sdk install java 11.0.17-ms
+        sdk install gradle 6.8.1
+        sdk install kotlin 1.4.20
+        sdk install maven 3.8.2
+        sdk use java 11.0.17-ms
+        sdk use gradle 6.8.1
+        sdk use kotlin 1.4.20
+        sdk use maven 3.8.2
+}
 
 core_up() {
-	cd ${PROJECTS}/scenmate/core
-	sdk install java 11.0.14-ms
-	sdk use java 11.0.14-ms
+	cd ${PROJECTS}/scentmate/core
+	core_setup
 	docker-compose up -d
 	./gradlew bootRun
 }
 
 core_down() {
-	cd ${PROJECTS}/scenmate/core
+	cd ${PROJECTS}/scentmate/core
 	docker-compose down
 	cd -
 }
 
 front_up() {
-	cd ${PROJECTS}/scenmate/frontend
+	cd ${PROJECTS}/scentmate/frontend
+        nvm use
+        npm run dev
+}
+
+admin_up() {
+        cd ${PROJECTS}/scentmate/admin
         nvm use
         npm run dev
 }
@@ -217,8 +232,7 @@ clean_apt_update() {
 	sudo rm /var/lib/dpkg/lock
 }
 
-lg()
-{
+function lg () {
     export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
 
     lazygit "$@"
@@ -227,4 +241,57 @@ lg()
             cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
             rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
     fi
+}
+
+
+declare -A pomo_options
+pomo_options["work"]="25"
+pomo_options["break"]="5"
+
+function pomodoro () {
+  if [ -n "$1" -a -n "${pomo_options["$1"]}" ]; then
+  	val=$1
+	echo $val | lolcat
+  	sleep ${pomo_options["$val"]}m
+	notify-send "'$val' session done" --icon=dialog-information
+ 	spd-say -r -25 "'$val' session done"
+  fi
+}
+
+function cycle_work(){
+    for i in $(seq $1); do
+        pomodoro 'work'
+        pomodoro 'break'
+    done
+}
+
+function zsh_preformance() {
+    repeat 10 { time zsh -i -c exit }
+}
+
+
+function cheat.sh() {
+   curl cheat.sh/$1
+}
+
+
+function resetvpn() {
+	 cd ~/Descargas/PanGPLinux-6.0.4-c25/
+	./install.sh
+	cd -
+
+}
+
+function wttr() {
+	curl wttr.in/$1
+}
+
+
+function pdfCipher() {
+	# $1 input, $2 output, $3 password
+	pdftk $1 output $2 userpw $3
+}
+
+function ram () {
+ps -eo pid,comm | grep -E -i -w 'chrome|slack|zoom' | awk '{print $1}' | xargs sudo renice -n 19 -p
 }

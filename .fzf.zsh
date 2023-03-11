@@ -1,7 +1,7 @@
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == */home/evalverde/.fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/home/evalverde/.fzf/bin"
+  PATH="${PATH:+${PATH}:}/home/evalverde/.fzf/bin"
 fi
 
 # Auto-completion

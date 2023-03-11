@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install -y copyq
+#sudo apt-get install -y copyq
 sudo apt-get install -y tilix
 sudo apt-get install -y zsh
 sudo apt-get install -y git-core

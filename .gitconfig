@@ -46,6 +46,7 @@
   whitespace = fix,-indent-with-non-tab,trailing-space,-cr-at-eol
   symlinks = true
   editor = nano
+  pager = delta
 [push]
   default = current
 [branch]
@@ -64,5 +65,18 @@
   old = red
   new = green
   whitespace = red reverse
+
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    line-numbers = true
+
+[merge]
+    conflictstyle = diff3
+
 [diff]
-  algorithm = patience
+    colorMoved = default
+[init]
+	defaultBranch = main

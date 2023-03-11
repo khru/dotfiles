@@ -4,7 +4,7 @@ export PATH="$HOME/.symfony/bin:$PATH"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export GITHUB_TOKEN=""
+export GITHUB_TOKEN_PULL=""
 
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
@@ -32,4 +32,14 @@ export GOROOT=/usr/local/go
 export PATH=$PATH:/usr/local/go/bin
 
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export PATH="$HOME/.tfenv/bin:$PATH"
+
+
+export GITHUB_TOKEN_PULL=""
+export PATH=$PATH:~/.local/share/JetBrains/Toolbox/scripts
+
+export PATH="$HOME/.spicetify:$PATH"
+
+export DISABLE_PARALLEL_FORKS=true
