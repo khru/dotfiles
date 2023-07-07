@@ -29,6 +29,7 @@ alias c="pbcopy"
 alias up="upgrade_oh_my_zsh && npm update && zimfw update && zimfw upgrade && sudo apt-get update && sudo apt-get upgrade -y"
 alias lg='lazygit'
 alias cache='sudo sync && sudo sysctl -w vm.drop_caches=3'
+alias animations="gsettings set org.gnome.desktop.interface enable-animations false"
 
 # PHP
 alias pf="./vendor/bin/phpunit --filter"
@@ -72,13 +73,13 @@ alias tbn="taskbook --note"
 alias tbd="taskbook --delete"
 
 # Youtube-dl
-alias dyp='youtube-dl -ci -f best -o "%(playlist_index)s-%(title)s.%(ext)s"'
-alias dy="youtube-dl -x -f best "
-alias dt='youtube-dl --external-downloader aria2c --external-downloader-args "-x 16"'
+alias dyp='yt-dlp -ci -o "%(playlist_index)s-%(title)s.%(ext)s"'
+alias dy="yt-dlp -x "
+alias dt='yt-dlp --external-downloader aria2c --external-downloader-args "-x 16"'
 
 # Systems
 alias getip='dig @resolver4.opendns.com myip.opendns.com +short -4'
-alias python=python3
+#alias python=python3
 
 
 # Codely
