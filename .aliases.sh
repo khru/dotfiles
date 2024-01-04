@@ -32,6 +32,7 @@ alias cache='sudo sync && sudo sysctl -w vm.drop_caches=3'
 alias animations="gsettings set org.gnome.desktop.interface enable-animations false"
 
 # PHP
+alias pvm="func() { sudo update-alternatives --config php; php --version }; func" # https://gist.github.com/antonio-gg-dev/faf67658001f58eb186b34e1b7c67965
 alias pf="./vendor/bin/phpunit --filter"
 alias behat="./vendor/bin/behat"
 alias bf="./vendor/bin/behat -p"
